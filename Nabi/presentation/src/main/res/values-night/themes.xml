@@ -1,7 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Nabi" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="Base.Theme.Nabi" parent="Theme.AppCompat.NoActionBar">
+
+        <item name="colorPrimary">@color/white</item>
+
+        <!-- Splash Screen -->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">@color/white</item>
+        <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">500</item>
+
+        <!-- Activity 전환 Animation 비활성화 -->
+        <item name="android:windowAnimationStyle">@null</item>
     </style>
+    
 </resources>

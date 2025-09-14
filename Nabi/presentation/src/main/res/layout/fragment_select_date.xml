@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primary">
+
+        <ImageButton
+            android:id="@+id/iv_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/transparent"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_back"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_select_date_text"
+            style="@style/heading4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_select_date"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/iv_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+        <TextView
+            android:id="@+id/tv_select_date"
+            style="@style/heading1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_select_date_text"
+            tools:text="2024년 7월 29일" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/shape_radius_top_20"
+            android:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_select_date" />
+
+        <TextView
+            android:id="@+id/tv_select_year"
+            style="@style/heading2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="48dp"
+            android:textColor="#383838"
+            app:layout_constraintStart_toStartOf="@id/cl_calendar"
+
+            app:layout_constraintTop_toTopOf="@id/cl_calendar"
+            tools:text="2024" />
+
+        <ImageView
+            android:id="@+id/iv_select_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_right"
+
+            app:layout_constraintBottom_toBottomOf="@id/tv_select_year"
+            app:layout_constraintStart_toEndOf="@id/tv_select_year"
+            app:layout_constraintTop_toTopOf="@id/tv_select_year" />
+
+        <TextView
+            android:id="@+id/tv_select_month"
+            style="@style/heading2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="32dp"
+            android:textColor="#383838"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_select_year"
+            tools:text="July" />
+
+        <ImageView
+            android:id="@+id/iv_left_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_left"
+
+            app:layout_constraintBottom_toBottomOf="@id/tv_select_month"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_select_month" />
+
+        <ImageView
+            android:id="@+id/iv_right_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_right"
+
+            app:layout_constraintBottom_toBottomOf="@id/tv_select_month"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_select_month" />
+
+        <LinearLayout
+            android:id="@+id/ll_week_container"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginTop="12dp"
+
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tv_select_month">
+
+            <TextView
+                style="@style/weekdays_bold_10px"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/text_week_sunday"
+                android:textColor="@color/red" />
+
+            <TextView
+                style="@style/weekdays_bold_10px"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/text_week_monday"
+                android:textColor="@color/gray2" />
+
+            <TextView
+                style="@style/weekdays_bold_10px"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/text_week_tuesday"
+                android:textColor="@color/gray2" />
+
+            <TextView
+                style="@style/weekdays_bold_10px"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/text_week_wednesday"
+                android:textColor="@color/gray2" />
+
+            <TextView
+                style="@style/weekdays_bold_10px"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/text_week_thursday"
+                android:textColor="@color/gray2" />
+
+            <TextView
+                style="@style/weekdays_bold_10px"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/text_week_friday"
+                android:textColor="@color/gray2" />
+
+            <TextView
+                style="@style/weekdays_bold_10px"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/text_week_saturday"
+                android:textColor="@color/skyblue" />
+        </LinearLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_calendar_month"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="12dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_done"
+            app:layout_constraintTop_toBottomOf="@id/ll_week_container" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_done"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="36dp"
+            android:background="@drawable/shape_radius_50"
+            android:backgroundTint="@color/black"
+
+            android:text="@string/text_done"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

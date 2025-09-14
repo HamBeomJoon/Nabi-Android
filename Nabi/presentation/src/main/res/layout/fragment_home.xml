@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageButton
+            android:id="@+id/ib_notification"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+
+            android:layout_marginStart="4dp"
+            android:background="@color/transparent"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_notify"
+
+            app:layout_constraintBottom_toBottomOf="@id/tv_nickname"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_nickname" />
+
+        <ImageButton
+            android:id="@+id/ib_mypage"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+
+            android:background="@color/transparent"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_mypage"
+            android:layout_marginEnd="4dp"
+
+            app:layout_constraintBottom_toBottomOf="@id/ib_notification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ib_notification" />
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            style="@style/heading2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="lililili 님" />
+
+        <TextView
+            android:id="@+id/tv_diary_day"
+            style="@style/home_consecutive_day_medium_12px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textColor="@color/gray1"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nickname"
+            tools:text="일기 작성 n일 째" />
+
+        <TextView
+            android:id="@+id/tv_my_diary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/text_my_diary"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_diary_day" />
+
+        <ImageView
+            android:id="@+id/iv_detail_diary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_right"
+
+            app:layout_constraintBottom_toBottomOf="@id/tv_my_diary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_my_diary" />
+
+        <FrameLayout
+            android:id="@+id/fl_diary_info"
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_my_diary">
+
+            <TextView
+                android:id="@+id/tv_empty_diary"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:gravity="center"
+                android:text="@string/text_empty_diary"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/tv_my_diary" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_diary"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal"
+
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_diary" />
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add_diary"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/shape_radius_50"
+            android:backgroundTint="@color/primary"
+            android:fontFamily="@font/pretendard_medium"
+
+            android:text="@string/text_add_diary"
+            android:textColor="@color/white"
+
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fl_diary_info" />
+
+        <View
+            android:id="@+id/divider_1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/gray2"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_add_diary" />
+
+        <TextView
+            android:id="@+id/tv_talk_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp"
+            android:text="@string/text_talk"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="@id/tv_my_diary"
+            app:layout_constraintTop_toBottomOf="@id/divider_1" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="12dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_main_talk"
+
+            app:layout_constraintBottom_toTopOf="@id/btn_talk"
+            app:layout_constraintTop_toBottomOf="@id/tv_talk_text"
+            tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_talk"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/shape_radius_50"
+            android:backgroundTint="@color/black"
+
+            android:fontFamily="@font/pretendard_medium"
+            android:text="@string/text_talk"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/btn_add_diary"
+            app:layout_constraintStart_toStartOf="@id/btn_add_diary" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

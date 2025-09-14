@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <Toolbar
+                android:id="@+id/tb_diary_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentInsetStart="0dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/ib_back"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@color/transparent"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_arrow" />
+
+                <ImageButton
+                    android:id="@+id/ib_bookmark"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="end"
+                    android:background="@color/transparent"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_heart" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_edit"
+                    style="@style/pretendard_semi_bold_18px"
+                    android:layout_width="48dp"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="end"
+                    android:background="@color/transparent"
+                    android:text="@string/text_modify"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_delete"
+                    style="@style/pretendard_semi_bold_18px"
+                    android:layout_width="48dp"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="end"
+                    android:background="@color/transparent"
+                    android:text="@string/text_delete"
+                    android:textColor="@color/red" />
+            </Toolbar>
+
+            <ImageView
+                android:id="@+id/iv_emotion"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                android:contentDescription="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tb_diary_detail"
+
+                tools:src="@drawable/img_no_emotion" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_emotion_reload"
+                android:layout_width="108dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/primary"
+                android:text="@string/text_emotion_reload"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_emotion" />
+
+            <TextView
+                android:id="@+id/tv_diary_date"
+                style="@style/heading2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_emotion_reload"
+                app:layout_goneMarginTop="12dp"
+                tools:text="2024년 7월 27일" />
+
+            <TextView
+                android:id="@+id/tv_diary_content"
+                style="@style/body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="12dp"
+                android:layout_marginBottom="36dp"
+                android:gravity="center|top"
+                android:padding="12dp"
+                android:textColor="@color/black"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_diary_date"
+                tools:text="오늘은 알바를 다녀왓다 밥시간에 비가 너무 많이 와서 뛰어가다가 물웅덩이를 밟았다 양말까지 다 젖어버려서 옆 반 전임선생님 슬리퍼를 뺏어 신었다 오후 수업하는 동안 양말도 다 마르고 슬리퍼가 폭신폭신해서 기분이 좋았다 선생님 ㄱㅅ합니다" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
